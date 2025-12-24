@@ -1,34 +1,26 @@
-import { useState } from 'react'
+import React from 'react'
 
-const skillList = [
-  { name: 'Senior PM Leader', color: 'bg-blue-400', desc: 'React, Vue, RWD, SPA' },
-  { name: 'Scrum Master', color: 'bg-pink-400', desc: 'Figma, 色彩美學, 動效' },
-  { name: 'Self-Learner', color: 'bg-green-400', desc: 'ChatGPT API, 資料視覺化' }
-]
-
-export default function Skills() {
-  const [active, setActive] = useState(0)
+export default function Skill() {
+  const skills = [
+    { name: 'React', level: 'Advanced' },
+    { name: 'Vue', level: 'Intermediate' },
+    { name: 'Responsive Design (RWD)', level: 'Advanced' },
+    { name: 'Single Page Applications (SPA)', level: 'Advanced' },
+  ]
 
   return (
-    <section className="w-full max-w-md mt-10 p-6 rounded-xl shadow bg-white">
-      <h2 className="text-xl font-semibold mb-4 text-primary">擅長領域</h2>
-
-      <div className="flex gap-3 mb-4">
-        {skillList.map((skill, i) => (
-          <button
-            key={i}
-            onClick={() => setActive(i)}
-            className={`px-4 py-2 font-bold rounded transition-colors duration-200 ${
-              i === active ? skill.color + ' text-white' : 'bg-gray-200 text-gray-600 hover:bg-gray-300'
-            }`}
+    <section id="skills" className="w-full max-w-3xl mx-auto mt-12 p-6 bg-white rounded-xl shadow">
+      <h2 className="text-2xl font-heading font-semibold mb-6 text-center text-primary">Skills</h2>
+      <div className="grid grid-cols-2 gap-6">
+        {skills.map((skill, index) => (
+          <div
+            key={index}
+            className="p-4 border rounded-lg text-center hover:shadow-md transition"
           >
-            {skill.name}
-          </button>
+            <h3 className="text-lg font-bold text-primary">{skill.name}</h3>
+            <p className="text-sm text-neutral">{skill.level}</p>
+          </div>
         ))}
-      </div>
-
-      <div className={`rounded-lg p-4 text-lg text-white transition-colors ${skillList[active].color}`}>
-        {skillList[active].desc}
       </div>
     </section>
   )

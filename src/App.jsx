@@ -1,11 +1,12 @@
+import React from 'react'
 import Header from './components/Header'
 import Skills from './components/Skills'
 import Achievements from './components/Achievements'
 import Contact from './components/Contact'
 
-export default function App() {
+function App() {
   return (
-    <div className="min-h-screen flex flex-col items-center bg-gray-50 pb-10 font-sans">
+    <div className="App bg-gray-50 min-h-screen font-sans">
       <Header />
       <Skills />
       <Achievements />
@@ -13,3 +14,5 @@ export default function App() {
     </div>
   )
 }
+
+export default App

@@ -1,7 +1,8 @@
+// vite.config.js
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
 export default defineConfig({
-  base: '/personal-website/',
-  plugins: [react()]
+  plugins: [react()],
+  base: '/personal-website/',   // ⚠️ 這裡要跟你的 GitHub repo 名稱一致
 })
